@@ -149,15 +149,17 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(array, rating) {
-    const newArray = [];
-    for (let i = 0; i < array.length; i++) {
-      if (rating >= rating && rating <= rating+1.99) {
-        newArray.push({array[i]});
-      } // if
-    } // for loop
-    return newArray;
-  } // function
+function getReviewByRating(array, rating) {
+  const newArray = [];
+  const min = rating;
+  const max = rating + 1;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].rating >= min && !(array[i].rating >= max)) {
+      newArray.push(array[i]);
+    } // if
+  } // for loop
+  return newArray;
+} // function
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
